@@ -18,6 +18,8 @@ public class Student {
     @JsonProperty("Phone_number")
     private String phoneNumber;
 
+    public Student() {}
+
     public Student(Integer id, String name, String surname, String fatherName, String email, String phoneNumber) {
         this.id = id;
         this.name = name;

@@ -23,7 +23,6 @@ public class ConsoleServiceImpl implements ConsoleService {
                     "4 -> Search for data\n" +
                     "5 -> Quit application\n");
             try {
-
                 Scanner input = new Scanner(System.in);
                 choice = input.nextInt();
             }catch (Exception e){
@@ -72,9 +71,9 @@ public class ConsoleServiceImpl implements ConsoleService {
                     System.out.println("Enter phone number: \n");
                     Scanner scannerPhoneNumber = new Scanner(System.in);
                     String phoneNumber = scannerPhoneNumber.nextLine();
-                    Pattern pNumber = Pattern.compile("^\\+(1-9){11}");
+                    Pattern pNumber = Pattern.compile("^\\+994(50|51|55|70|77|99)[1-9]\\d{6}$");
                     Matcher mNumber = pNumber.matcher(phoneNumber);
-                    if(!mNumber.find()){
+                    if(!mNumber.matches()){
                         System.out.println("ERROR!\nEnter your phone number properly:\n");
                         break;
                     }
