@@ -2,44 +2,28 @@ package Utils;
 
 import Model.Student;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
+import java.nio.file.Path;
 import java.util.*;
 
 public class ReadJson {
-    public List<Student> read() throws IOException, ParseException {
-        JsonParser jsonParser = new JsonParser();
-        List<Student> list = new ArrayList<>();
-        Gson gson = new Gson();
-        FileReader reader = new FileReader("database.json");
-        while (true) {
-            JsonElement jsonElement = jsonParser.parse(reader);
-
-
-            if (!jsonElement.isJsonNull()) {
-
-                list.add(gson.fromJson(jsonElement, Student.class));
-            } else {
-                break;
-            }
-        }
-        for (int i = 0; i < list.size(); i++){
-            System.out.println(list.get(i));
-        }
+    static Type type = new TypeToken<HashMap<String, Student>>() {
+    }.getType();
+    public static HashMap<String,Student> read() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("database.json"));
+        GsonBuilder gson = new GsonBuilder();
+        HashMap<String, Student> map = gson.create().fromJson(reader,type);
         reader.close();
-
-
-return list;
+        return map;
     }
 }
