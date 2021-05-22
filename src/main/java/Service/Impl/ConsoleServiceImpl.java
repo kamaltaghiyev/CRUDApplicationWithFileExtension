@@ -79,77 +79,77 @@ public class ConsoleServiceImpl implements ConsoleService {
                     }
                     crudService.addStudent(name,surname,fatherName,email,phoneNumber);
                     break;
-                case 2:
-                    System.out.println("What do you want to change:\n" +
-                            "1 - name:\n" +
-                            "2 - surname:\n" +
-                            "3 - father name:\n");
-
-                    Scanner updateChoice = new Scanner(System.in);
-                    int scannedUpdateChoice = updateChoice.nextInt();
-                    switch (scannedUpdateChoice) {
-                        case 1:
-                            System.out.println("Enter name: \n");
-                            Scanner scannerOldName = new Scanner(System.in);
-                            String oldName = scannerOldName.nextLine();
-                            Pattern pOldName = Pattern.compile("([a-zA-Z])");
-                            Matcher mOldName = pOldName.matcher(oldName);
-                            if (!mOldName.find()) {
-                                System.out.println("ERROR!\nEnter your name properly:\n");
-                                break;
-                            }
-                            System.out.println("Enter name: \n");
-                            Scanner scannerNewName = new Scanner(System.in);
-                            String newName = scannerNewName.nextLine();
-                            Pattern pNewName = Pattern.compile("([a-zA-Z])");
-                            Matcher mNewName = pNewName.matcher(newName);
-                            if (!mNewName.find()) {
-                                System.out.println("ERROR!\nEnter your name properly:\n");
-                                break;
-                            }
-                            crudService.updateStudentName(newName, oldName);
-                        case 2:
-                            System.out.println("Enter name: \n");
-                            Scanner scannerOldSurname = new Scanner(System.in);
-                            String oldSurname = scannerOldSurname.nextLine();
-                            Pattern pOldSurname = Pattern.compile("([a-zA-Z])");
-                            Matcher mOldSurname = pOldSurname.matcher(oldSurname);
-                            if (!mOldSurname.find()) {
-                                System.out.println("ERROR!\nEnter your surname properly:\n");
-                                break;
-                            }
-                            System.out.println("Enter name: \n");
-                            Scanner scannerNewSurname = new Scanner(System.in);
-                            String newSurname = scannerNewSurname.nextLine();
-                            Pattern pNewSurname = Pattern.compile("([a-zA-Z])");
-                            Matcher mNewSurname = pNewSurname.matcher(newSurname);
-                            if (!mNewSurname.find()) {
-                                System.out.println("ERROR!\nEnter your surname properly:\n");
-                                break;
-                            }
-                            crudService.updateStudentSurname(newSurname, oldSurname);
-                        case 3:
-                            System.out.println("Enter father name: \n");
-                            Scanner scannerOldFatherName = new Scanner(System.in);
-                            String oldFatherName = scannerOldFatherName.nextLine();
-                            Pattern pOldFatherName = Pattern.compile("([a-zA-Z])");
-                            Matcher mOldFatherName = pOldFatherName.matcher(oldFatherName);
-                            if (!mOldFatherName.find()) {
-                                System.out.println("ERROR!\nEnter your father name properly:\n");
-                                break;
-                            }
-                            System.out.println("Enter father name: \n");
-                            Scanner scannerNewFatherName = new Scanner(System.in);
-                            String newFatherName = scannerNewFatherName.nextLine();
-                            Pattern pNewFatherName = Pattern.compile("([a-zA-Z])");
-                            Matcher mNewFatherName = pNewFatherName.matcher(newFatherName);
-                            if (!mNewFatherName.find()) {
-                                System.out.println("ERROR!\nEnter your father name properly:\n");
-                                break;
-                            }
-                            crudService.updateStudentFatherName(newFatherName, oldFatherName);
-                    }
-                    break;
+//                case 2:
+//                    System.out.println("What do you want to change:\n" +
+//                            "1 - name:\n" +
+//                            "2 - surname:\n" +
+//                            "3 - father name:\n");
+//
+//                    Scanner updateChoice = new Scanner(System.in);
+//                    int scannedUpdateChoice = updateChoice.nextInt();
+//                    switch (scannedUpdateChoice) {
+//                        case 1:
+//                            System.out.println("Enter old name: \n");
+//                            Scanner scannerOldName = new Scanner(System.in);
+//                            String oldName = scannerOldName.nextLine();
+//                            Pattern pOldName = Pattern.compile("([a-zA-Z])");
+//                            Matcher mOldName = pOldName.matcher(oldName);
+//                            if (!mOldName.find()) {
+//                                System.out.println("ERROR!\nEnter your name properly:\n");
+//                                break;
+//                            }
+//                            System.out.println("Enter new name: \n");
+//                            Scanner scannerNewName = new Scanner(System.in);
+//                            String newName = scannerNewName.nextLine();
+//                            Pattern pNewName = Pattern.compile("([a-zA-Z])");
+//                            Matcher mNewName = pNewName.matcher(newName);
+//                            if (!mNewName.find()) {
+//                                System.out.println("ERROR!\nEnter your name properly:\n");
+//                                break;
+//                            }
+//                            crudService.updateStudentName(newName, oldName);
+//                        case 2:
+//                            System.out.println("Enter old surname: \n");
+//                            Scanner scannerOldSurname = new Scanner(System.in);
+//                            String oldSurname = scannerOldSurname.nextLine();
+//                            Pattern pOldSurname = Pattern.compile("([a-zA-Z])");
+//                            Matcher mOldSurname = pOldSurname.matcher(oldSurname);
+//                            if (!mOldSurname.find()) {
+//                                System.out.println("ERROR!\nEnter your surname properly:\n");
+//                                break;
+//                            }
+//                            System.out.println("Enter new surname: \n");
+//                            Scanner scannerNewSurname = new Scanner(System.in);
+//                            String newSurname = scannerNewSurname.nextLine();
+//                            Pattern pNewSurname = Pattern.compile("([a-zA-Z])");
+//                            Matcher mNewSurname = pNewSurname.matcher(newSurname);
+//                            if (!mNewSurname.find()) {
+//                                System.out.println("ERROR!\nEnter your surname properly:\n");
+//                                break;
+//                            }
+//                            crudService.updateStudentSurname(newSurname, oldSurname);
+//                        case 3:
+//                            System.out.println("Enter father name: \n");
+//                            Scanner scannerOldFatherName = new Scanner(System.in);
+//                            String oldFatherName = scannerOldFatherName.nextLine();
+//                            Pattern pOldFatherName = Pattern.compile("([a-zA-Z])");
+//                            Matcher mOldFatherName = pOldFatherName.matcher(oldFatherName);
+//                            if (!mOldFatherName.find()) {
+//                                System.out.println("ERROR!\nEnter your father name properly:\n");
+//                                break;
+//                            }
+//                            System.out.println("Enter father name: \n");
+//                            Scanner scannerNewFatherName = new Scanner(System.in);
+//                            String newFatherName = scannerNewFatherName.nextLine();
+//                            Pattern pNewFatherName = Pattern.compile("([a-zA-Z])");
+//                            Matcher mNewFatherName = pNewFatherName.matcher(newFatherName);
+//                            if (!mNewFatherName.find()) {
+//                                System.out.println("ERROR!\nEnter your father name properly:\n");
+//                                break;
+//                            }
+//                            crudService.updateStudentFatherName(newFatherName, oldFatherName);
+//                    }
+//                    break;
                 case 3:
                     System.out.println("Enter name which you want to delete: \n");
                     Scanner scannerNameToDelete = new Scanner(System.in);

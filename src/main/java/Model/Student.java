@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.UUID;
+
 public class Student {
     @JsonProperty("Id")
-    private Integer id;
+    private String id;
     @JsonProperty("Name")
     private String name;
     @JsonProperty("Surname")
@@ -20,8 +22,8 @@ public class Student {
 
     public Student() {}
 
-    public Student(Integer id, String name, String surname, String fatherName, String email, String phoneNumber) {
-        this.id = id;
+    public Student(String name, String surname, String fatherName, String email, String phoneNumber) {
+        this.id = String.valueOf(UUID.randomUUID());;
         this.name = name;
         this.surname = surname;
         this.fatherName = fatherName;
@@ -29,11 +31,11 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
